@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.cezario.model.User;
-import br.cezario.model.UserDto;
+import br.cezario.model.dto.UserDto;
 import br.cezario.service.UserService;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -31,7 +31,7 @@ public class UserController {
 
     //@Secured("ROLE_USER")
     //@PreAuthorize("hasRole('USER')")
-    @PreAuthorize("hasAnyRole('USER', 'ADMIN')")
+    @PreAuthorize("hasAnyRole('ADMIN')")
     @RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
     public User getOne(@PathVariable(value = "id") Long id){
         return userService.findById(id);

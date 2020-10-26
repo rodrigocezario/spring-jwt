@@ -14,7 +14,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import br.cezario.model.User;
-import br.cezario.model.UserDto;
+import br.cezario.model.dto.UserDto;
 import br.cezario.repository.UserRepository;
 
 @Service
